@@ -1,0 +1,8 @@
+23:35:30 **** Clean-only build of configuration Debug for project ExercisTwo ****
+make clean 
+rm -rf ./main.d ./main.o
+rm -rf ExercisTwo
+' '
+
+23:35:31 Build Finished. 0 errors, 0 warnings. (took 233ms)
+

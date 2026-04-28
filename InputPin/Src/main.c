@@ -1,0 +1,33 @@
+
+#include <stdint.h>
+
+int main(void)
+{
+
+	uint32_t *Clk 					= (uint32_t*) 0x40023830;
+
+	uint32_t *GpioDEnableRegister 	= (uint32_t*) 0x40020C00;
+	uint32_t *GpioDModeOut 			= (uint32_t*) 0x40020C14;
+
+	uint32_t *GpioAEnableRegister 	= (uint32_t*) 0x40020000;
+	uint32_t *GpioAModeIn 			= (uint32_t*) 0x40020010;
+
+
+	*Clk |= (1 << 0) | (1 << 3);
+
+	*GpioDEnableRegister &= ~(1 << 24);
+	*GpioDEnableRegister |= (1 << 24);
+
+	*GpioAEnableRegister &= ~(3 << 0);
+
+
+	while(1){
+		uint8_t Valor = (uint8_t) (*GpioAModeIn & 0x1);
+
+		if (Valor){
+			for (uint32_t i=0; i<=500000; i++) *GpioDModeOut = (1 << 12);
+
+			*GpioDModeOut &= ~(1 << 12);
+		}
+	}
+}
