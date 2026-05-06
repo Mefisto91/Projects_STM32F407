@@ -1,0 +1,36 @@
+
+
+#include <stdint.h>
+
+
+int main(void)
+{
+	uint32_t *RCC_AHB1ENR	=	(uint32_t*) 0x40023830;
+	uint32_t *RCC_CFGR		=	(uint32_t*) 0x40023808;
+
+	uint32_t *GPIOA_MODER	=	(uint32_t*) 0x40020000;
+	uint32_t *GPIOA_ODR		=	(uint32_t*) 0x40020014;
+
+	*RCC_AHB1ENR	|=	(1 << 0);
+
+	*GPIOA_MODER	&=	~((3 << 8) | (3 << 0));
+	*GPIOA_MODER	|=	(1 << 8) | (1 << 0);
+
+	*RCC_CFGR		&=	~((3 << 21) | (8 << 24));
+	*RCC_CFGR		|=	(1 << 22) | (1 << 24);
+
+	while(1){
+
+	}
+}
+
+/*
+
+HCLK
+AHB
+APB2
+SYSCLK
+HSERDY
+HSEON
+MCO1
+*/

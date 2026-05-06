@@ -1,28 +1,21 @@
-16:39:05 **** Incremental Build of configuration Debug for project TimerOne ****
+16:23:46 **** Incremental Build of configuration Debug for project Clock168MHz ****
 make -j20 all 
 arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "TimerOne.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\USER\OneDrive\Desktop\Sergio\Cursos\STM32\STM32CUBEIDE\TimerOne\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TimerOne.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: TimerOne.elf
+arm-none-eabi-gcc -o "Clock168MHz.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\USER\OneDrive\Desktop\Sergio\Cursos\STM32\Projects_STM32F407\Clock168MHz\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Clock168MHz.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Clock168MHz.elf
  
-arm-none-eabi-size  TimerOne.elf 
-arm-none-eabi-objdump -h -S TimerOne.elf  > "TimerOne.list"
+arm-none-eabi-size  Clock168MHz.elf 
+arm-none-eabi-objdump -h -S Clock168MHz.elf  > "Clock168MHz.list"
    text	   data	    bss	    dec	    hex	filename
-   1028	      0	   1568	   2596	    a24	TimerOne.elf
+    996	      0	   1568	   2564	    a04	Clock168MHz.elf
 Finished building: default.size.stdout
  
-Finished building: TimerOne.list
+Finished building: Clock168MHz.list
  
-16:39:14 **** Incremental Build of configuration Debug for project TimerOne ****
+16:23:54 **** Incremental Build of configuration Debug for project Clock168MHz ****
 make -j20 all 
-arm-none-eabi-size  TimerOne.elf 
+arm-none-eabi-size  Clock168MHz.elf 
    text	   data	    bss	    dec	    hex	filename
-   1028	      0	   1568	   2596	    a24	TimerOne.elf
-Finished building: default.size.stdout
- 
-17:03:03 **** Incremental Build of configuration Debug for project TimerOne ****
-make -j20 all 
-arm-none-eabi-size  TimerOne.elf 
-   text	   data	    bss	    dec	    hex	filename
-   1028	      0	   1568	   2596	    a24	TimerOne.elf
+    996	      0	   1568	   2564	    a04	Clock168MHz.elf
 Finished building: default.size.stdout
  
