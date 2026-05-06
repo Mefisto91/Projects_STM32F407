@@ -1,0 +1,32 @@
+
+
+#include <stdint.h>
+
+
+int main(void)
+{
+	uint32_t *AHB1ENR		=	(uint32_t*) 0x40023830;
+	uint32_t *GPIOA_MODER	=	(uint32_t*)	0x40020000;
+	uint32_t *GPIOAODR		=	(uint32_t*) 0x40020014;
+
+	*GPIOA_MODER	&=	~((3 << 0) | (3 << 8));
+	*GPIOA_MODER	|=	(1 << 0) | (1 << 8);
+
+	*GPIOAODR		&= ~((1 << 0) | (1 << 8));
+	*GPIOAODR		|= (1 << 0) | (1 << 8);
+
+
+
+	while(1){
+
+	}
+}
+
+
+HCLK
+AHB
+APB2
+SYSCLK
+HSERDY
+HSEON
+MCO1
